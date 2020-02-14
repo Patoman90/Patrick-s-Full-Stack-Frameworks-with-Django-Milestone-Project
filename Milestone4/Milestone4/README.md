@@ -75,6 +75,14 @@ Defensive design:
     the final product which is the website. The tests involved checking for typos, syntax errors, bugs, layout on multiple platforms and 
     checking that whne code was added that other functionality on each page and app still worked as appropriate.
 
+#Deployment
+    I deployed my code on gitpod to my github repository.
+    From my github repository it was connected to the Heroku server, Travis tool for testing each version.
+    The website was wired up to AWS S£ cloud database and was wired up with Stripe for secure payments.
+    When deploying I made sure not to push any secret keys or data that could be exploited by cyber criminals.
+    I made sure the debug was switched off to prevent unwanted leaks of sensitive code.
+    All code was working and then submitted for assessment via appropriate links and stored on github.
+
 #Index and referenced code
     I modelled my django code from my courses mini-project as a reference and then tried to modify it so that it suited my website and was my 
     tailored code for the project. I used the Bootstrap framework to help build the site and fontawesome for icons and then customized it 
@@ -92,4 +100,5 @@ Defensive design:
  AWS S3
  Heroku server
  Travis
- 
+ Stripe
+ Django
