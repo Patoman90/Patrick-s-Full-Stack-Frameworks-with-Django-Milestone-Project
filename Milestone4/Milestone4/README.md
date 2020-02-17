@@ -1,9 +1,9 @@
-# Patrick Trollip's Full Stack Frameworks with Django Milestone Project.
+### Patrick Trollip's Full Stack Frameworks with Django Milestone Project.
 
 
-# Link to Website:
+### Link to Website:
 
-#what is the project?
+### What is the project?
     Cyber Sappers is a cyber security business with it's products and services based on a website that gives users
     the ability to easily find a range of cyber security solutions to their own websites, databases, code, servers and general 
     online security. The Cyber Sappers website gives users the ability to browse the range of services and products via dropdown menu,
@@ -24,8 +24,8 @@
 
 
 
-# Wire Frames and UX:
- Wireframes:
+### Wire Frames and UX:
+# Wireframes:
     https://www.wireframes.org/tiger/data/codinghamster90/home_page_5e44596f3a303.htm
     https://www.wireframes.org/tiger/data/codinghamster90/login_page_5e4474971ca53.htm
     https://www.wireframes.org/tiger/data/codinghamster90/register_page_5e447350de782.htm
@@ -37,7 +37,7 @@
     https://www.wireframes.org/tiger/data/codinghamster90/payment_form_5e4471ddde48a.htm
 
 
-User stories:
+# User stories:
 
     As a business owner I want to have a way to easily manage the security of my website and my business data. I want
     to be able to have a tailored cyber security system in place that I can add as much or as little as I feel I need.
@@ -59,9 +59,9 @@ User stories:
     incase someone was watching my screen.
 
 
-# Project planning:
+### Project planning:
 
-Defensive design:
+# Defensive design:
     For defensive design I created links to images that will give a ALt attribute incase the image is not supported or the 
     user is visually impared. I added IF statements to my javascript code that will end with a else statement that will make sure something happens other than
     a error being displayed to the user that they won't understand. I also tried to make code that is simple enough not to slow down low band width connections
@@ -69,13 +69,13 @@ Defensive design:
     that display when something is missing on the form, when the form is sent and when the form is unable to send. I also tried to have a short term memory on a page 
     that will not force the user to resubmit certain data they already added to a form.
 
-#Testing
+### Testing:
 
     Testing was done using Chrome Developer tools, Travis, debug mode set to true and functionality tested and passed before releasing
     the final product which is the website. The tests involved checking for typos, syntax errors, bugs, layout on multiple platforms and 
     checking that whne code was added that other functionality on each page and app still worked as appropriate.
 
-#Deployment
+### Deployment:
     I deployed my code on gitpod to my github repository.
     From my github repository it was connected to the Heroku server, Travis tool for testing each version.
     The website was wired up to AWS S£ cloud database and was wired up with Stripe for secure payments.
@@ -83,12 +83,12 @@ Defensive design:
     I made sure the debug was switched off to prevent unwanted leaks of sensitive code.
     All code was working and then submitted for assessment via appropriate links and stored on github.
 
-#Index and referenced code
+### Index and referenced code
     I modelled my django code from my courses mini-project as a reference and then tried to modify it so that it suited my website and was my 
     tailored code for the project. I used the Bootstrap framework to help build the site and fontawesome for icons and then customized it 
     so that it was unique.
 
-#Technologies and tools used
+### Technologies and tools used
  Wire frames tool = https://www.wireframes.org/tiger/getin.php
  Bootstrap version 4 =
  Fontawesome =
