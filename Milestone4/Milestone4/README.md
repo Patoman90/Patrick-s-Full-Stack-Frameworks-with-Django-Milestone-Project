@@ -1,9 +1,9 @@
-### Patrick Trollip's Full Stack Frameworks with Django Milestone Project.
+# Patrick Trollip's Full Stack Frameworks with Django Milestone Project.
 
 
-### Link to Website:
+## Link to Website:
 
-### What is the project?
+# What is the project?
     Cyber Sappers is a cyber security business with it's products and services based on a website that gives users
     the ability to easily find a range of cyber security solutions to their own websites, databases, code, servers and general 
     online security. The Cyber Sappers website gives users the ability to browse the range of services and products via dropdown menu,
@@ -24,8 +24,8 @@
 
 
 
-### Wire Frames and UX:
-# Wireframes:
+# Wire Frames and UX:
+### Wireframes:
     https://www.wireframes.org/tiger/data/codinghamster90/home_page_5e44596f3a303.htm
     https://www.wireframes.org/tiger/data/codinghamster90/login_page_5e4474971ca53.htm
     https://www.wireframes.org/tiger/data/codinghamster90/register_page_5e447350de782.htm
@@ -37,7 +37,7 @@
     https://www.wireframes.org/tiger/data/codinghamster90/payment_form_5e4471ddde48a.htm
 
 
-# User stories:
+### User stories:
 
     As a business owner I want to have a way to easily manage the security of my website and my business data. I want
     to be able to have a tailored cyber security system in place that I can add as much or as little as I feel I need.
@@ -59,9 +59,9 @@
     incase someone was watching my screen.
 
 
-### Project planning:
+# Project planning:
 
-# Defensive design:
+### Defensive design:
     For defensive design I created links to images that will give a ALt attribute incase the image is not supported or the 
     user is visually impared. I added IF statements to my javascript code that will end with a else statement that will make sure something happens other than
     a error being displayed to the user that they won't understand. I also tried to make code that is simple enough not to slow down low band width connections
