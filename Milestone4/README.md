@@ -36,6 +36,7 @@
     https://www.wireframes.org/tiger/data/codinghamster90/products_and_services_5e4459a2c8b7a.htm
     https://www.wireframes.org/tiger/data/codinghamster90/shopping_basket_5e4476d14c930.htm
     https://www.wireframes.org/tiger/data/codinghamster90/payment_form_5e4471ddde48a.htm
+    https://www.wireframes.org/tiger/data/codinghamster90/reviews_page_5e4b3f48b9c2e.htm
 
 
 ### User stories:
