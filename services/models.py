@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+"""This Model creates a model called Service that gives data fields that include text,images and numbers."""
 
 
 class Service(models.Model):
