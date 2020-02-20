@@ -1,51 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Base html file</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-</head>
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-4">
-                <img src="{% media/images/CyberSappers1.png %}" alt="Picture of a man in a suit holding a silver cyber shield in his hand">
-            </div>
-            <div class="col-8">
-                <h1> Cyber Sappers Ltd. </h1>
-            </div>
-        </div>        
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-4">
-                <button>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Register</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Login</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Products</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Services</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Cart</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Base html file</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    </head>
+    <body>
+        <table>
+            <tbody>
+                <tr>
+                    <div class="container-fluid">
+                        <div class="col-4">
+                            <td>
+                                <img src="{% media/images/CyberSappers1.png %}" alt="Picture of a man in a suit holding a silver cyber shield in his hand">
+                            </td>
                         </div>
-                    </li>
-                </button>
-            </div>
-            <div class="col-8">
-                <h2>Home page</h2>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</body>
+                        <div class="col-8">
+                            <td>
+                                <h1> Cyber Sappers Ltd. </h1>
+                            </td>
+                        </div>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="container-fluid">
+                        <div class="col-4">
+                            <td>
+                                <button>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Register</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Login</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Products</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Services</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Cart</a>
+                                        </div>
+                                    </li>
+                                </button>
+                                <br>
+                                <br>
+                                <div>
+                                    <a href="#"><button>Get a quote!</button></a>
+                                </div>
+                            </td>
+                        </div>
+                        <div class="col-8">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="col-8">
+                                                <h2>Home page</h2>
+                                            </div>
+                                            <tr>
+                                                <div class="col-2" >
+                                                    <td>
+                                                        <i class="fas fa-user"></i>
+                                                    </td>
+                                                </div>
+                                                <div class="col-6">
+                                                    <td>
+                                                        <p>
+                                                             Section about the company
+                                                        </p>
+                                                    </td>
+                                                </div>
+                                            </tr>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </tr>
+            </tbody>
+        </table>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
 </html>
