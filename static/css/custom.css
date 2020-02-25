@@ -1,6 +1,15 @@
 .my-image{
-    size:200px;
+    height: 200px ;
+    width: 200px ;
 }
-.my-company{
-    color:whitesmoke;
+
+#header{ 
+    text-align: center ;
+    
+}
+
+#footer{
+    text-align: center ;
+    margin-top: 10px ;
+    margin-bottom: 10px ;
 }
