@@ -3,10 +3,19 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
+"""
+Form for logging a user in.
+"""
+
 
 class UserLoginForm(forms.Form):
-    useremail_or_username = forms.CharField()
+    user_email_or_username = forms.CharField()
     user_password = forms.CharField(widget=forms.PasswordInput)
+
+
+"""
+Form for registering a user.
+"""
 
 
 class UserRegistrationForm(UserCreationForm):
