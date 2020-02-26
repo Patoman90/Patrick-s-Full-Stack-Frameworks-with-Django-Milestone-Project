@@ -1,4 +1,54 @@
 {% extends 'base.html' %}
-
 {% block content %}
+    <form>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">First name</label>
+                <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" value="Mark" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    First name required please.
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer02">Last name</label>
+                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" value="Otto" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Last name required please.
+                </div>
+            </div>
+            <div class="form-group col-md-4 mb-3">
+                <label for="validationServer03">Choose item.</label>
+                <select class="custom-select" id="validationServer03" required>
+                    <option value="">Your item</option>
+                    <option value="1">{% for Product in cart_items %}{{ item.product.name }}Product</option>
+                    <option value="2">Service</option>
+                    <option value="3">Other</option>
+                </select>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Choose a item for review please.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="validationTextarea">Write Review</label>
+                <textarea class="form-control is-invalid" id="userReview" placeholder="Your review here please." rows="3" required></textarea>
+                <div class="valid-feedback">
+                    Thank you for the review!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide your feedback of the item you are reviewing.
+                </div>
+            </div>
+        </div>
+        {% csrf_token %}
+        <button class="btn btn-primary" type="submit">Submit review</button>
+    </form>
 {% endblock %}
