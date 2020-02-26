@@ -1,11 +1,14 @@
 .my-image{
-    size: 200px ;
-}
-.my-company{
-    color: whitesmoke ;
+    display: inline;
+    width: 100px;
+    height: 100px;
 }
 
-#header{ 
+.my-company{
+    display: inline;
+    color: black;
+}
+#header_row{ 
     text-align: center ;
     margin-top: 10px ;
     margin-bottom: 10px ;

@@ -19,3 +19,4 @@ requests==2.22.0
 s3transfer==0.3.3
 stripe==2.42.0
 urllib3==1.25.8
+travis==0.0.3
