@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     </head>
     <body>
-<<<<<<< HEAD
         <header class="container-fluid">
             <div id="header_row" class="row no-gutters">
                 <div class="col-sm-12 col-md-4 col-lg-3 my-image">
@@ -24,25 +23,25 @@
         </header>
         <section>       
             <div class="container-fluid">
-                <div class="row">
+                <div class="row no-gutters">
                     <div class="col-sm-12 col-md-4 col-lg-3">
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Menu<span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                {% if user.is_not_authenticated %}
+                                {% if user.is_authenticated %}
                                     <li><a href="{% url 'home' %}">Home</a></li>
-                                    <li><a href="{% url 'register' %}">Register</a></li>
-                                    <li><a href="{% url 'login' %}">Login</a></li>
+                                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                                    <li><a href="{% url 'view_cart' %}">Cart</a></li>
                                     <li><a href="{% url 'products' %}">Products</a></li>
                                     <li><a href="{% url 'services' %}">Services</a></li>
                                     <li><a href="{% url 'reviews' %}">Reviews</a></li>
                                 {% else %}
-                                     <li><a href="{% url 'home' %}">Home</a></li>
-                                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                                    <li><a href="{% url 'profile' %}">Profile</a></li>
-                                    <li><a href="{% url 'view_cart' %}">Cart</a></li>
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="{% url 'register' %}">Register</a></li>
+                                    <li><a href="{% url 'login' %}">Login</a></li>
                                     <li><a href="{% url 'products' %}">Products</a></li>
                                     <li><a href="{% url 'services' %}">Services</a></li>
                                     <li><a href="{% url 'reviews' %}">Reviews</a></li>
@@ -55,109 +54,39 @@
                             {% block content %}
         
                             {% endblock %}
+                            <hr>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    {{ message }}
+                                {% endfor %}
+                            {% endif %}
                         </div>
                     </div> 
                 </div>
-                <div class="row">
+                <div class="row no-gutters col-12">
                     <nav class="navbar">
                         <form class="form-inline">
-                            {% if user.is_not_authenticated %}
-                                <button class="btn btn-outline-success" type="button"><a href="{% url 'home' %}">Home</a></button>
-                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'login' %}">Login</a></button>
-                                <button class="btn btn-outline-success" type="button"><a href="{% url 'products' %}">Products</a></button>
-                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'services' %}">Services</a></button>
-                                <button class="btn btn-outline-success" type="button"><a href="{% url 'reviews' %}">Reviews</a></button>
-                            {% else %}
+                            {% if user.is_authenticated %}
                                 <button class="btn btn-outline-success" type="button"><a href="{% url 'home' %}">Home</a></button>
                                 <button class="btn btn-outline-secondary" type="button"><a href="{% url 'logout' %}">Logout</a></button>
                                 <button class="btn btn-outline-success" type="button"><a href="{% url 'profile' %}">Profile</a></button>
                                 <button class="btn btn-outline-secondary" type="button"><a href="{% url 'reviews' %}">Reviews</a></button>
                                 <button class="btn btn-outline-success" type="button"><a href="{% url 'view_cart' %}">Cart</a></button>
+                            {% else %}
+                                <button class="btn btn-outline-success" type="button"><a href="{% url 'home' %}">Home</a></button>
+                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'login' %}">Login</a></button>
+                                <button class="btn btn-outline-success" type="button"><a href="{% url 'products' %}">Products</a></button>
+                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'services' %}">Services</a></button>
+                                <button class="btn btn-outline-success" type="button"><a href="{% url 'reviews' %}">Reviews</a></button>
                             {% endif %}
                         </form>
                     </nav>
                 </div>
             </div>
         </section>
-        <div class="row">   
+        <div class="row no-gutters col-12 ">   
             <footer id="footer"> Project by Patrick Trollip</footer>
         </div>
-=======
-        <header class="container-fluid" id="header">
-            <div class="container-fluid">
-                <div class="row no-gutters">
-                    <div class="col-4">
-                        <img class="my-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcontinuinged.uml.edu%2Fimages%2Fprograms%2Fmain%2Fcybersecurity-lock.jpg&f=1&nofb=1" alt="Picture of a man in a suit holding a silver cyber shield in his hand"> 
-                    </div>
-                    <div class="col-8">
-                        <h1> Cyber Sappers Ltd. </h1>
-                    </div>
-                </div>
-            </div>
-        </header>       
-        <div class="container-fluid">
-            <div class="row no-gutters">
-                <div class="col-4">
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Menu<span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                          {% if user.is_not_authenticated %}
-                            <li><a href="{% url 'home' %}">Home</a></li>
-                            <li><a href="{% url 'register' %}">Register</a></li>
-                            <li><a href="{% url 'login' %}">Login</a></li>
-                            <li><a href="{% url 'products' %}">Products</a></li>
-                            <li><a href="{% url 'services' %}">Services</a></li>
-                            <li><a href="{% url 'reviews' %}">Reviews</a></li>
-                          {% else %}
-                            <li><a href="{% url 'home' %}">Home</a></li>
-                            <li><a href="{% url 'logout' %}">Logout</a></li>
-                            <li><a href="{% url 'profile' %}">Profile</a></li>
-                            <li><a href="{% url 'view_cart' %}">Cart</a></li>
-                            <li><a href="{% url 'products' %}">Products</a></li>
-                            <li><a href="{% url 'services' %}">Services</a></li>
-                            <li><a href="{% url 'reviews' %}">Reviews</a></li>
-                          {% endif %}
-                        </ul>
-                    </div>
-                    <br>
-                    <div>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Get a Quote!
-                    </div>
-                </div>
-                <div class="col-8">
-                    <div class="container">
-                        {% block content %}
-        
-                        {% endblock %}
-                     </div>
-                </div> 
-            </div>
-            <div class="row no-gutters">
-                <nav class="navbar">
-                    <form class="form-inline">
-                        {% if user.is_not_authenticated %}
-                        <button class="btn btn-outline-success" type="button"><a href="{% url 'home' %}">Home</a></button>
-                        <button class="btn btn-outline-secondary" type="button"><a href="{% url 'login' %}">Login</a></button>
-                        <button class="btn btn-outline-success" type="button"><a href="{% url 'products' %}">Products</a></button>
-                        <button class="btn btn-outline-secondary" type="button"><a href="{% url 'services' %}">Services</a></button>
-                        <button class="btn btn-outline-success" type="button"><a href="{% url 'reviews' %}">Reviews</a></button>
-                        {% else %}
-                        <button class="btn btn-outline-success" type="button"><a href="{% url 'home' %}">Home</a></button>
-                        <button class="btn btn-outline-secondary" type="button"><a href="{% url 'logout' %}">Logout</a></button>
-                        <button class="btn btn-outline-success" type="button"><a href="{% url 'profile' %}">Profile</a></button>
-                        <button class="btn btn-outline-secondary" type="button"><a href="{% url 'reviews' %}">Reviews</a></button>
-                        <button class="btn btn-outline-success" type="button"><a href="{% url 'view_cart' %}">Cart</a></button>
-                        {% endif %}
-                    </form>
-                </nav>
-            </div>
-        </div>
-        <div>   
-            <footer id="footer"> Project by Patrick Trollip</footer>
-        </div>
->>>>>>> fa63e37acc86672b3b86c1597f268687cc147563
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
