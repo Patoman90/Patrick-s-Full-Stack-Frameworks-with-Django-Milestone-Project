@@ -19,4 +19,7 @@ requests==2.22.0
 s3transfer==0.3.3
 stripe==2.42.0
 urllib3==1.25.8
+<<<<<<< HEAD
 travis==0.0.3
+=======
+>>>>>>> fa63e37acc86672b3b86c1597f268687cc147563
