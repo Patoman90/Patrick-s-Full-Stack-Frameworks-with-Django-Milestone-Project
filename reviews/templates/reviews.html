@@ -22,11 +22,13 @@
                     Last name required please.
                 </div>
             </div>
+            {{products}}
             <div class="form-group col-md-4 mb-3">
                 <label for="validationServer03">Choose item.</label>
                 <select class="custom-select" id="validationServer03" required>
                     <option value="">Your item</option>
-                    <option value="1">{% for Product in cart_items %}{{ item.product.name }}Product</option>
+                    
+                    <option value="1">{% for item in products %}{{ item.name }} Product{% endfor %}</option>
                     <option value="2">Service</option>
                     <option value="3">Other</option>
                 </select>
