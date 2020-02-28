@@ -26,16 +26,15 @@ def login(request):
     if request.method == 'POST':
         login_form = UserLoginForm(request.POST)
         if login_form.is_valid():
-            user = auth.authenticate(username=request.POST['user_email_or_username'],
+            user = auth.authenticate(username=request.POST['username'],
                                      password=request.POST['user_password'])
-            messages.success(request, "You have successfully logged in!")
 
             if user:
                 auth.login(user=user, request=request)
                 messages.error(request, "You have successfully logged in")
                 return redirect(reverse('home'))
             else:
-                login_form.add_error(None, "Your username or password are incorrect")
+                login_form.add_error(None, "Your username and/or password are incorrect")
     else:
         login_form = UserLoginForm()
 
@@ -50,13 +49,13 @@ def profile(request):
 
 def register(request):
     """A view that manages the registration form"""
-    if request.user.is_authenticated:	
+    if request.user.is_authenticated:
         return redirect(reverse('home'))
     if request.method == 'POST':
-        registration_form = UserRegistrationForm(request.POST)	
-        if registration_form.is_valid():	
-            registration_form.save()	
-            user = auth.authenticate(username=request.POST['user_email_or_username'],	
+        registration_form = UserRegistrationForm(request.POST)
+        if registration_form.is_valid():
+            registration_form.save()
+            user = auth.authenticate(username=request.POST['username'],
                                      password=request.POST['password1'])
 
             if user:
@@ -65,7 +64,7 @@ def register(request):
                 return redirect(reverse('home'))
 
             else:
-                messages.error(request, "unable to log you in at this time!")
+                messages.error(request, "Unable to register you in at this time!")
     else:
         registration_form = UserRegistrationForm()
 

@@ -9,7 +9,7 @@ Form for logging a user in.
 
 
 class UserLoginForm(forms.Form):
-    user_email_or_username = forms.CharField()
+    username = forms.CharField()
     user_password = forms.CharField(widget=forms.PasswordInput)
 
 

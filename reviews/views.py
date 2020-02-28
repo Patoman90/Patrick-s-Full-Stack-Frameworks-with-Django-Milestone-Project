@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from products.models import Product
+from services.models import Service
 from .models import Reviews
 
 
@@ -9,4 +10,5 @@ from .models import Reviews
 def show_all_reviews(request):
     reviews = Reviews.objects.all()
     products = Product.objects.all()
-    return render(request, "reviews.html", {"reviews": reviews, "products": products})
+    services = Service.objects.all()
+    return render(request, "reviews.html", {"reviews": reviews, "products": products, "services": services})
