@@ -1,21 +1,22 @@
-.my-image{
-    
-    width: 300px;
+#my-image{
+    display: inline;
+    width: 100px;
     height: 100px;
 }
 
-.my-company{
+#my-company{
     display: inline;
     color: black;
-}
-#header_row{ 
     text-align: center ;
     margin-top: 10px ;
     margin-bottom: 10px ;
+    
 }
 
 #footer{
     text-align: center ;
     margin-top: 10px ;
     margin-bottom: 10px ;
+    background-color: #e6f2ff;
 }
+
