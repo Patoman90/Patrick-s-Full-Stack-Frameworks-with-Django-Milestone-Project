@@ -11,11 +11,13 @@
                     <form method="POST" action="{% url 'add_to_cart' service.id %}">
                         {% csrf_token %}
                         <div class="input-group">
-                            <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Insert quantity">
-                            <span class="input-group-btn">
-                                <button class="btn btn-success" type="submit"> Add item</button>
-                                <button class="btn btn-success" type=""> Add review </button>
-                            </span>
+                            {% if user.is_authenticated %}
+                                <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Insert quantity">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-success" type="submit"> Add item</button>
+                                </span>
+                            {% endif %}
+                            <button class="btn btn-success" type="submit"> Add review </button>
                         </div>
                     </form>
                 </div>

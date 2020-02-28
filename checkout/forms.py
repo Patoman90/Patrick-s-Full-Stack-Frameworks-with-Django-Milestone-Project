@@ -12,7 +12,7 @@ class MakePaymentForm(forms.Form):
     expiry_month = forms.ChoiceField(label='Month', choices=MONTH_CHOICES, required=False)
     expiry_year = forms.ChoiceField(label='Year', choices=YEAR_CHOICES, required=False)
     stripe_id = forms.CharField(widget=forms.HiddenInput)
-
+"""Stripe takes care of the privacy of the details above so I leave it as required false to hide their input"""
 
 class OrderForm(forms.ModelForm):
     class Meta:
