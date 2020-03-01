@@ -33,24 +33,25 @@
                     <div class="col-sm-12 col-md-4 col-lg-3">
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Menu<span class="caret"></span>
+                                <i class="fas fa-bars"> Menu</i>
+                                <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
                                 {% if user.is_authenticated %}
-                                    <li><a href="{% url 'home' %}">Home</a></li>
-                                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                                    <li><a href="{% url 'profile' %}">Profile</a></li>
-                                    <li><a href="{% url 'view_cart' %}">Cart</a></li>
-                                    <li><a href="{% url 'products' %}">Products</a></li>
-                                    <li><a href="{% url 'services' %}">Services</a></li>
-                                    <li><a href="{% url 'reviews' %}">Reviews</a></li>
+                                    <li><a href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a></li>
+                                    <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out"> Logout</i></a></li>
+                                    <li><a href="{% url 'profile' %}"><i class="fas fa-user-circle"> Profile</i></a></li>
+                                    <li><a href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"> Cart</i></a></li>
+                                    <li><a href="{% url 'products' %}"><i class="fab fa-hdd"> Products</i></a></li>
+                                    <li><a href="{% url 'services' %}"><i class="fas fa-handshake"> Services</i></a></li>
+                                    <li><a href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a></li>
                                 {% else %}
-                                    <li><a href="{% url 'home' %}">Home</a></li>
-                                    <li><a href="{% url 'register' %}">Register</a></li>
-                                    <li><a href="{% url 'login' %}">Login</a></li>
-                                    <li><a href="{% url 'products' %}">Products</a></li>
-                                    <li><a href="{% url 'services' %}">Services</a></li>
-                                    <li><a href="{% url 'reviews' %}">Reviews</a></li>
+                                    <li><a href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a></li>
+                                    <li><a href="{% url 'register' %}"><i class="far fa-registered"> Register</i></a></li>
+                                    <li><a href="{% url 'login' %}"><i class="fas fa-key"> Login</i></a></li>
+                                    <li><a href="{% url 'products' %}"><i class="far fa-hdd"> Products</i></a></li>
+                                    <li><a href="{% url 'services' %}"><i class="far fa-handshake"> Services</i></a></li>
+                                    <li><a href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a></li>
                                 {% endif %}
                             </ul>
                         </div>
@@ -76,17 +77,17 @@
                     <nav class="navbar">
                         <form class="form-inline">
                             {% if user.is_authenticated %}
-                                <button class="btn btn-outline-success" type="button"><a href="{% url 'home' %}">Home</a></button>
-                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'logout' %}">Logout</a></button>
-                                <button class="btn btn-outline-success" type="button"><a href="{% url 'profile' %}">Profile</a></button>
-                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'reviews' %}">Reviews</a></button>
-                                <button class="btn btn-outline-success" type="button"><a href="{% url 'view_cart' %}">Cart</a></button>
+                                <button class="btn btn-outline-success" type="button"><a href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a></button>
+                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'logout' %}"><i class="fas fa-sign-out"> Logout</i></a></button>
+                                <button class="btn btn-outline-success" type="button"><a href="{% url 'profile' %}"><i class="fas fa-user-circle"> Profile</i></a></button>
+                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a></button>
+                                <button class="btn btn-outline-success" type="button"><a href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"> Cart</i></a></button>
                             {% else %}
-                                <button class="btn btn-outline-success" type="button"><a href="{% url 'home' %}">Home</a></button>
-                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'login' %}">Login</a></button>
-                                <button class="btn btn-outline-success" type="button"><a href="{% url 'products' %}">Products</a></button>
-                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'services' %}">Services</a></button>
-                                <button class="btn btn-outline-success" type="button"><a href="{% url 'reviews' %}">Reviews</a></button>
+                                <button class="btn btn-outline-success" type="button"><a href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a></button>
+                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'login' %}"><i class="fas fa-key"> Login</i></a></button>
+                                <button class="btn btn-outline-success" type="button"><a href="{% url 'products' %}"><i class="far fa-hdd"> Products</i></a></button>
+                                <button class="btn btn-outline-secondary" type="button"><a href="{% url 'services' %}"><i class="far fa-handshake"> Services</i></a></button>
+                                <button class="btn btn-outline-success" type="button"><a href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a></button>
                             {% endif %}
                         </form>
                     </nav>
