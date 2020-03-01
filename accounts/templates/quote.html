@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+    <section>
+      <div class="col" id="quoteForm">
+        <div><h2> Get your quote with this form </h2></div>
+        <hr>
+        <div class="container">
+            {% if user.is_authenticated %}
+                <div class="col">
+                    <form action="POST">
+                        <div class="form-group">
+                            <label for="formInputName"> Your name: </label>
+                            <input type="text" class="form-control" id="formInputName" placeholder="Your full-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="formInputQuote"> Your Quote or Question: </label>
+                            <input type="text" class="form-control" id="formInputQuote" placeholder="Your comments">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-outline-success"><i class="fas fa-arrow-right"> Send</i></button>
+                        </div>
+                        {% else %}
+                        <h3> Sorry you need to login to send a form otherwise you can call us. <h3>
+                    </form>
+                </div>
+            {% endif %}
+            <div class="col-12">
+                <h3> Call us instead.</h3>
+                <p> Phone: 1800-1234567</p>
+            </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

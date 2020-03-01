@@ -47,6 +47,11 @@ def profile(request):
     return render(request, 'profile.html')
 
 
+def quote(request):
+    """A view that displays the quote page for the user"""
+    return render(request, 'quote.html')
+
+
 def register(request):
     """A view that manages the registration form"""
     if request.user.is_authenticated:
