@@ -4,9 +4,8 @@ Django settings for Milestone4 project.
 """
 
 import os
-from os import path
-if path.exists("env.py"):
-    import env
+import env
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -73,14 +72,18 @@ WSGI_APPLICATION = 'Milestone4.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+# https://docs.djangoproject.com/en/1.11.28/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+if "DATABASE_URL" in os.environ:
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+else:
+    print("Failed to use DATABASE_URL. Using SQlite instead.")
+    DATABASES = {
+                    'default': {
+                                 'ENGINE': 'django.db.backends.sqlite3',
+                                 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+                                }
+                }
 
 
 # Password validation
@@ -101,9 +104,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [	
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.CaseInsensitiveAuth'
+]
 
 # Internationalization
-# https://docs.djangoproject.com/en/3.0/topics/i18n/
+# https://docs.djangoproject.com/en/1.11.28/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -117,7 +124,10 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
+# https://docs.djangoproject.com/en/1.11.28/howto/static-files/
+
+STATICFILES_LOCATION = 'static'
+
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (

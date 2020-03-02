@@ -56,7 +56,7 @@ def checkout(request):
 
         else:
             print(payment_form.errors)
-            messages.error(request, "We were unable to complete the transaction with that card.")
+            messages.error(request, "Payment unsuccessful with that card.")
 
     else:
         payment_form = MakePaymentForm()

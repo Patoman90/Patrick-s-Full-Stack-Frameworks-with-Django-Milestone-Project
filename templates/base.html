@@ -82,7 +82,7 @@
                 </div>
                 <div class="row no-gutters col-12">
                     <nav class="navbar">
-                        <form class="form-inline">
+                        <form class="form-inline" id="navigationBar">
                             {% if user.is_authenticated %}
                                 <button class="btn btn-outline-success" type="button"><a href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a></button>
                                 <button class="btn btn-outline-secondary" type="button"><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"> Logout</i></a></button>
@@ -96,16 +96,17 @@
                                 <button class="btn btn-outline-secondary" type="button"><a href="{% url 'services' %}"><i class="far fa-handshake"> Services</i></a></button>
                                 <button class="btn btn-outline-success" type="button"><a href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a></button>
                             {% endif %}
+                            </ul>
                         </form>
                     </nav>
                 </div>
             </div>
         </section>
-        <div class="row no-gutters col-12 ">   
-            <footer id="footer"> Project by Patrick Trollip</footer>
+        <div class="row no-gutters col"  id="footer">   
+            <footer><h3> Project by Patrick Trollip </h3></footer>
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 </html>
