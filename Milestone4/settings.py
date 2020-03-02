@@ -140,3 +140,12 @@ STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+# email
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'testingdev1990@gmail.com'
+EMAIL_HOST_USER = "TestDEVaccount TESTdevACCOUNT"
+EMAIL_HOST_PASSWORD = 'YQ6M$eqB#Z"~g8u#'
+EMAIL_PORT = '587'

@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
-from .forms import UserLoginForm, UserRegistrationForm
+from .forms import UserLoginForm, UserRegistrationForm, UserQuoteForm
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
 
-# Create your views here.
 def index(request):
     """A view that displays the index page"""
     return render(request, "index.html")
@@ -47,9 +47,16 @@ def profile(request):
     return render(request, 'profile.html')
 
 
+@login_required
 def quote(request):
     """A view that displays the quote page for the user"""
     return render(request, 'quote.html')
+    name = request.POST.get('UserQuoteForm.full_name', '')
+    quote = request.POST.get('UserQuoteForm.user_quote', '')
+    details = request.POST.get('phone_number', 'date')
+    if request.method == 'POST' and name and quote and details:
+        quote(request.user.email, ['testingdev1990@gmail.com'], fail_silently=False)
+    return render(request, 'home')
 
 
 def register(request):

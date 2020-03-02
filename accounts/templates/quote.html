@@ -7,7 +7,8 @@
         <div class="container">
             {% if user.is_authenticated %}
                 <div class="col">
-                    <form action="POST">
+                    <form role="form" method="POST" action="{% url 'quote' %}">
+                        {% csrf_token %}    
                         <div class="form-group">
                             <label for="formInputName"> Your name: </label>
                             <input type="text" class="form-control" id="formInputName" placeholder="Your full-name">
@@ -17,7 +18,9 @@
                             <input type="text" class="form-control" id="formInputQuote" placeholder="Your comments">
                         </div>
                         <div>
-                            <button type="submit" class="btn btn-outline-success"><i class="fas fa-arrow-right"> Send</i></button>
+                            <button type="submit" class="btn btn-outline-success" method="POST"><i class="fas fa-arrow-right">
+                                Send</i>
+                            </button>
                         </div>
                         {% else %}
                         <h3> Sorry you need to login to send a form otherwise you can call us. <h3>

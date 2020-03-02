@@ -1,4 +1,5 @@
 from django import forms
+from .models import quote
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
@@ -47,3 +48,13 @@ class UserRegistrationForm(UserCreationForm):
             raise ValidationError("Passwords do not match")
 
         return password2
+
+
+""" User quote form """
+
+
+class UserQuoteForm(forms.Form):
+    full_name = forms.CharField(max_length=50)
+    user_quote = forms.CharField(max_length=500)
+    phone_number = forms.CharField(max_length=20)
+    date = forms.DateField()
