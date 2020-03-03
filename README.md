@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Patoman90/Patrick-s-Full-Stack-Frameworks-with-Django-Milestone-Project.svg?branch=master)](https://travis-ci.org/Patoman90/Patrick-s-Full-Stack-Frameworks-with-Django-Milestone-Project)
 # Patrick Trollip's Full Stack Frameworks with Django Milestone Project.
 
 
