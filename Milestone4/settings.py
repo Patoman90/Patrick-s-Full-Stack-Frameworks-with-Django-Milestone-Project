@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'reviews',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -126,18 +127,34 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11.28/howto/static-files/
 
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Mon, 10 Jun 2080 19:00:00 GMT',
+    'CacheControl': 'max-age=99999999'
+}
+
+AWS_STORAGE_BUCKET_NAME = 'patricks-milestone4'
+AWS_S3_REGION_NAME = 'eu-west-1'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_SECRET_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+
 STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),)
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/images/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
