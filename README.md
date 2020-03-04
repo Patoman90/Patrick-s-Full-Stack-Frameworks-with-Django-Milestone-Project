@@ -94,6 +94,7 @@ https://www.wireframes.org/tiger/data/codinghamster90/home_page_5e44596f3a303.ht
     Images: https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fevent.asme.org%2FEvents%2Fmedia%2Flibrary%2Fimages%2Ficons%2Fhome-page%2Fprev-year-conference-info-480_icon.png%3Fext%3D.png&f=1&nofb=1
             https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcogitogroup.net%2Fwp-content%2Fuploads%2Fhardware.png&f=1&nofb=1
             https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fantivirus-internet-security-1%2F33%2Fcybersecurity-512.png&f=1&nofb=1
+            https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-photo%2Fabstract-technology-binary-code-background_34629-592.jpg&f=1&nofb=1
 
 ### Technologies and tools used
  Wire frames tool = https://www.wireframes.org/tiger/getin.php
