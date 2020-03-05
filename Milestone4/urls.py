@@ -18,7 +18,7 @@ from django.views import static
 from .settings import MEDIA_ROOT
 
 urlpatterns = [
-    url('admin/', admin.site.urls),
+    url(r'admin/', admin.site.urls),
     url(r'^home/', index, name='home'),
     url(r'^$', show_all_products, name='index1'),
     url(r'^$', show_all_services, name='index2'),
