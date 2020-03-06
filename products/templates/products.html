@@ -13,12 +13,13 @@
                         {% csrf_token %}
                         <div class="input-group">
                             {% if user.is_authenticated %}
+                            <div>
                                 <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Insert quantity">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-success" type="submit"><i class="fas fa-plus"> Add item </i></button>
+                                    <button class="btn btn-info" type="submit"><i class="fas fa-plus"> Add item </i></button>
                                 </span>
+                            </div>
                             {% endif %}
-                            <button class="btn btn-success" type="submit"><a href="{% url 'reviews' %}"><i class="fas fa-plus"> Add review </i></a></button>
                         </div>
                     </form>
                 </div>

@@ -8,7 +8,7 @@
         <title>Milestone project 4</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.css" integrity="sha256-BbKecxrFo+Ecew/N4HhSlsVkNCvNiDHJySBsqWciTYg=" crossorigin="anonymous" />
-        <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+        <link rel="stylesheet" href="https://patricks-milestone4.s3-eu-west-1.amazonaws.com/custom.css">
         {% block head_js %}
         {% endblock head_js %}
     </head>
@@ -57,9 +57,17 @@
                         <br>
                         <div>
                             <a href="{% url 'quote' %}">
-                            <button class="btn btn-primary " role="button" id="quote" >
-                                <i class="far fa-check-circle"> Get a Quote!</i>
-                            </button>
+                                <button class="btn btn-primary " role="button" id="quote" >
+                                    <i class="far fa-check-circle"> Get a Quote!</i>
+                                </button>
+                            </a>
+                        </div>
+                        <br>
+                        <div>
+                            <a href="{% url 'reviews' %}">
+                                <button class="btn btn-primary" role="button" id="Review">
+                                    <i class="fas fa-plus"> Add review </i>
+                                </button>
                             </a>
                         </div>
                         <hr>
@@ -95,7 +103,6 @@
                                 <button class="btn btn-outline-info" type="button"><a href="{% url 'services' %}"><i class="far fa-handshake"> Services</i></a></button>
                                 <button class="btn btn-outline-primary" type="button"><a href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a></button>
                             {% endif %}
-                            </ul>
                         </form>
                     </nav>
                 </div>

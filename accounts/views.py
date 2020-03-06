@@ -47,7 +47,6 @@ def profile(request):
     return render(request, 'profile.html')
 
 
-@login_required
 def quote(request):
     """A view that displays the quote page for the user"""
     return render(request, 'quote.html')
