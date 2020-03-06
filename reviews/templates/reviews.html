@@ -5,7 +5,7 @@
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="validationServer01">First name</label>
-                <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" required>
+                <input type="text" class="form-control is-valid" id="validationServer01" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationServer02">Last name</label>
-                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" required>
+                <input type="text" class="form-control is-valid" id="validationServer02" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -23,18 +23,28 @@
                     Last name required please.
                 </div>
             </div>
+            <br>
             <div class="form-group col-md-4 mb-3">
                 <label for="validationServer03">Choose item.</label>
-                <select class="custom-select" id="validationServer03" required>
-                    <option value="">Your item</option>
-                    <option value="1">{% for item in products %}{{ item.name }} Product {% endfor %}</option>
-                    <option value="2">{% for item in services %}{{ item.name }} Service {% endfor %}</option>
+                <select class="custom-select form-control is-valid" id="validationServer03" required>
+                    <option value="1"> Product </option>
+                    <option value="2"> Service </option>
                 </select>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
                 <div class="invalid-feedback">
                     Choose a item for review please.
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer04"> Name of Item </label>
+                <input type="text" class="form-control is-valid" id="validationServer04" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Service or Product name required please.
                 </div>
             </div>
             <div class="mb-3">
