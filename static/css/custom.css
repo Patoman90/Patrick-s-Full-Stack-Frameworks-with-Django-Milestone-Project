@@ -63,3 +63,24 @@
 .btn.btn-outline-info{
     color: rgb(204, 204, 204);
 }
+
+#services-image{
+    display: inline;
+    width: 100%;
+    height: 200px;
+    margin:10px;
+}
+
+#hardware-image{
+    display: inline;
+    width: 100%;
+    height: 200px;
+    margin:10px;
+}
+
+#about-us-image{
+    display: inline;
+    width: 100%;
+    height: 200px;
+    margin:10px;
+}

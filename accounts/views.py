@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect
-from django.contrib import messages, auth
-from django.core.urlresolvers import reverse
-from .forms import UserLoginForm, UserRegistrationForm, UserQuoteForm
-from django.template.context_processors import csrf
+from django.shortcuts import render, redirect, reverse
+from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
+from django.core.mail import EmailMessage, send_mail
+from django.http import HttpResponse
+from django.contrib.auth.models import User
 from django.conf import settings
+from accounts.forms import UserLoginForm, UserRegistrationForm, UserQuoteForm
 
 
 def index(request):
@@ -12,6 +13,7 @@ def index(request):
     return render(request, "index.html")
 
 
+@login_required
 def logout(request):
     """A view that logs the user out and redirects back to the home page"""
     auth.logout(request)
@@ -50,12 +52,13 @@ def profile(request):
 def quote(request):
     """A view that displays the quote page for the user"""
     return render(request, 'quote.html')
-    name = request.POST.get('UserQuoteForm.full_name', '')
-    quote = request.POST.get('UserQuoteForm.user_quote', '')
-    details = request.POST.get('phone_number', 'date')
-    if request.method == 'POST' and name and quote and details:
-        quote(request.user.email, ['testingdev1990@gmail.com'], fail_silently=False)
-    return render(request, 'home')
+
+
+def email(request, emailto):
+    """ function for sending a quote to a email """
+    if request.method == 'POST':
+        send_mail(request.user.email, ['testingdev1990@gmail.com'], fail_silently=False)
+    return HttpResponse('%s' % email)
 
 
 def register(request):

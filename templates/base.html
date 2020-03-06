@@ -91,7 +91,7 @@
                     <nav class="navbar">
                         <form class="form-inline" id="navigationBar">
                             {% if user.is_authenticated %}
-                                <button class="btn btn-outline-primary" type="button"><a href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a></button>
+                                <button class="btn btn-outline-primary" type="button"><i class="fas fa-home"> Home</i></a></button>
                                 <button class="btn btn-outline-info" type="button"><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"> Logout</i></a></button>
                                 <button class="btn btn-outline-primary" type="button"><a href="{% url 'profile' %}"><i class="fas fa-user-circle"> Profile</i></a></button>
                                 <button class="btn btn-outline-info" type="button"><a href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a></button>
