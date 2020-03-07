@@ -63,7 +63,7 @@ def email(request, emailto):
 
 def register(request):
     """Render the registration page"""
-     if request.user.is_authenticated:
+    if request.user.is_authenticated:
         return redirect(reverse('index'))
 
     if request.method == "POST":
