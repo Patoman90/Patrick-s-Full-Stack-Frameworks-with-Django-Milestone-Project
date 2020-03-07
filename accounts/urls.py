@@ -1,15 +1,14 @@
 from django.conf.urls import url, include
 from accounts import urls_reset
-from .views import index, register, profile, logout, login, quote, email
+from accounts.views import index, register, logout, login, quote, email
 
 
 urlpatterns = [
-    url(r'^index/$', index, name='index'),
+    url(r'^$', index, name='index'),
     url(r'^register/$', register, name='register'),
-    url(r'^profile/$', profile, name='profile'),
-    url(r'^email/$', email, name='email'),
-    url(r'^quote/$', quote, name='quote'),
     url(r'^logout/$', logout, name='logout'),
     url(r'^login/$', login, name='login'),
+    url(r'^quote/$', quote, name='quote'),
+    url(r'^email/$', email, name='email'),
     url(r'^password-reset/', include(urls_reset)),
 ]

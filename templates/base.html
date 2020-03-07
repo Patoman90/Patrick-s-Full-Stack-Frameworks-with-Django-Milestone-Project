@@ -31,28 +31,28 @@
                 <div class="row no-gutters">
                     <div class="col-sm-12 col-md-4 col-lg-3">
                         <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
                                 <i class="fas fa-bars"> Menu</i>
                                 <span class="caret"></span>
                             </button>
-                            <ul class="dropdown-menu">
+                            <div class="dropdown-menu">
                                 {% if user.is_authenticated %}
-                                    <li><a href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a></li>
-                                    <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"> Logout</i></a></li>
-                                    <li><a href="{% url 'profile' %}"><i class="fas fa-user-circle"> Profile</i></a></li>
-                                    <li><a href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"> Cart</i></a></li>
-                                    <li><a href="{% url 'products' %}"><i class="fas fa-hdd"> Products</i></a></li>
-                                    <li><a href="{% url 'services' %}"><i class="fas fa-handshake"> Services</i></a></li>
-                                    <li><a href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a></li>
+                                    <a class="dropdown-item" href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a>
+                                    <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"> Logout</i></a>
+                                    <a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-user-circle"> Profile</i></a>
+                                    <a class="dropdown-item" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"> Cart</i></a>
+                                    <a class="dropdown-item" href="{% url 'products' %}"><i class="fas fa-hdd"> Products</i></a>
+                                    <a class="dropdown-item" href="{% url 'services' %}"><i class="fas fa-handshake"> Services</i></a>
+                                    <a class="dropdown-item" href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a>
                                 {% else %}
-                                    <li><a href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a></li>
-                                    <li><a href="{% url 'register' %}"><i class="far fa-registered"> Register</i></a></li>
-                                    <li><a href="{% url 'login' %}"><i class="fas fa-key"> Login</i></a></li>
-                                    <li><a href="{% url 'products' %}"><i class="far fa-hdd"> Products</i></a></li>
-                                    <li><a href="{% url 'services' %}"><i class="far fa-handshake"> Services</i></a></li>
-                                    <li><a href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a></li>
+                                    <a class="dropdown-item" href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a>
+                                    <a class="dropdown-item" href="{% url 'register' %}"><i class="far fa-registered"> Register</i></a>
+                                    <a class="dropdown-item" href="{% url 'login' %}"><i class="fas fa-key"> Login</i></a>
+                                    <a class="dropdown-item" href="{% url 'products' %}"><i class="far fa-hdd"> Products</i></a>
+                                    <a class="dropdown-item" href="{% url 'services' %}"><i class="far fa-handshake"> Services</i></a>
+                                    <a class="dropdown-item" href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a>
                                 {% endif %}
-                            </ul>
+                            </div>
                         </div>
                         <br>
                         <div>

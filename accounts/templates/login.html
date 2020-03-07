@@ -1,9 +1,25 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
-    <form method="POST">
-        {% csrf_token %} {{ login_form }}
-        <button type="submit">Login</button>
-    </form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-6"> <h2> User Login </h2></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-6">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="col-sm-12 col-md-8 col-lg-6">
+                        {{ login_form }}
+                    </div>
+                    <br>
+                    <div class="col-sm-12 col-md-8 col-lg-6">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
     <br>
 {% endblock %}

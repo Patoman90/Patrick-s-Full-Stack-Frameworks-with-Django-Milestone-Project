@@ -63,23 +63,4 @@ def email(request, emailto):
 
 def register(request):
     """A view that manages the registration form"""
-    if request.user.is_authenticated:
-        return redirect(reverse('home'))
-    if request.method == 'POST':
-        registration_form = UserRegistrationForm(request.POST)
-        if registration_form.is_valid():
-            registration_form.save()
-            user = auth.authenticate(username=request.POST['username'],
-                                     password=request.POST['password1'])
-
-            if user:
-                auth.login(request, user)
-                messages.success(request, "You have successfully registered")
-                return redirect(reverse('home'))
-
-            else:
-                messages.error(request, "Unable to register you in at this time!")
-    else:
-        registration_form = UserRegistrationForm()
-
     return render(request, 'register.html')
