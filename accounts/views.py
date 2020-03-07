@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from accounts.forms import UserLoginForm, MakeUserAccount, UserQuoteForm
 from django.core.mail import EmailMessage, send_mail
 from django.http import HttpResponse
-from django.contrib.auth.models import User
 from django.conf import settings
-from accounts.forms import UserLoginForm, MakeUserAccount, UserQuoteForm
+
 
 
 def index(request):
@@ -30,13 +31,13 @@ def login(request):
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
                                      password=request.POST['user_password'])
+        messages.error(request, "You have successfully logged in")
 
-            if user:
-                auth.login(user=user, request=request)
-                messages.error(request, "You have successfully logged in")
-                return redirect(reverse('home'))
-            else:
-                login_form.add_error(None, "Your username and/or password are incorrect")
+        if user:
+            auth.login(user=user, request=request) 
+            return redirect(reverse('home'))
+        else:
+            login_form.add_error(None, "Your username and/or password are incorrect")
     else:
         login_form = UserLoginForm()
 
@@ -46,7 +47,8 @@ def login(request):
 @login_required
 def profile(request):
     """A view that displays the profile page of a logged in user"""
-    return render(request, 'profile.html')
+    user = User.objects.get(email=request.user.email)
+    return render(request, 'profile.html', {"profile": user})
 
 
 def quote(request):

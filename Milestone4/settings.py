@@ -3,18 +3,27 @@ Django settings for Milestone4 project.
 
 """
 
+# import relevant files and databases.
 import os
 import env
 import dj_database_url
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# SECURITY WARNING: keep the secret key used in production secret!
+
+# SECURITY Key
+
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
+# Debug to be turned of for production.
+
 DEBUG = True
+
+
+# Allowed hosts
 
 ALLOWED_HOSTS = ['localhost', 'patricks4thmilestoneproject.herokuapp.com']
 
@@ -39,6 +48,9 @@ INSTALLED_APPS = [
     'storages',
 ]
 
+
+# Middleware needed beyond the OS.
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -49,7 +61,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+# Root url
+
 ROOT_URLCONF = 'Milestone4.urls'
+
+
+# Django templates
 
 TEMPLATES = [
     {
@@ -69,11 +87,11 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'Milestone4.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/1.11.28/ref/settings/#databases
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
@@ -111,7 +129,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.11.28/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -124,8 +141,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11.28/howto/static-files/
+# AWS settings
 
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Mon, 10 Jun 2080 19:00:00 GMT',
@@ -141,15 +157,18 @@ AWS_S3_HOST = 's3-eu-west-1.amazonaws.com'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIAFILES_LOCATION = 'media'
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+# Static and Media files (CSS, JavaScript, Images)
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
@@ -158,7 +177,7 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-# email
+# Email settings
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

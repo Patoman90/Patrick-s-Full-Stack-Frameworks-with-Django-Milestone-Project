@@ -6,12 +6,12 @@ class CaseInsensitiveAuth:
     """
     Defined authenticate and get_user functions inside of a class called CaseInsensitiveAuth.
     """
-    def authenticate(self, user_email_or_username=None, user_password=None):
+    def authenticate(self, user_username=None, user_password=None):
         """
         Here the user is found when they provide their username/email and password.
         """
-        users = User.objects.filter(Q(username__iexact=user_email_or_username) |
-                                    Q(email__iexact=user_email_or_username))
+        users = User.objects.filter(Q(username__iexact=user_username) |
+                                    Q(email__iexact=user_email))
         if not users:
             return None
 
