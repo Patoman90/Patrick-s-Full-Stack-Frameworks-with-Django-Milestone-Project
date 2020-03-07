@@ -5,7 +5,7 @@ from django.core.mail import EmailMessage, send_mail
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.conf import settings
-from accounts.forms import UserLoginForm, UserRegistrationForm, UserQuoteForm
+from accounts.forms import UserLoginForm, MakeUserAccount, UserQuoteForm
 
 
 def index(request):
@@ -62,5 +62,24 @@ def email(request, emailto):
 
 
 def register(request):
-    """A view that manages the registration form"""
-    return render(request, 'register.html')
+    """Render the registration page"""
+     if request.user.is_authenticated:
+        return redirect(reverse('index'))
+
+    if request.method == "POST":
+        registration_form = MakeUserAccount(request.POST)
+
+        if registration_form.is_valid():
+            registration_form.save()
+
+            user = auth.authenticate(username=request.POST['username'],
+                                     password=request.POST['password1'])
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "You have successfully registered")
+            else:
+                messages.error(request, "Unable to register your account at this time")
+    else:
+        registration_form = MakeUserAccount()
+    return render(request, 'register.html', {
+        "registration_form": registration_form})

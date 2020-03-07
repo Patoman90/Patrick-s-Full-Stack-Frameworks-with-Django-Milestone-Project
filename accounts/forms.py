@@ -19,7 +19,7 @@ Form for registering a user.
 """
 
 
-class UserRegistrationForm(UserCreationForm):
+class MakeUserAccount(UserCreationForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(
         label='Password Confirmation',
