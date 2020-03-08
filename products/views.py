@@ -8,3 +8,7 @@ from .models import Product
 def show_all_products(request):
     products = Product.objects.all()
     return render(request, "products.html", {"products": products})
+
+
+def get_reviews(request):
+    
