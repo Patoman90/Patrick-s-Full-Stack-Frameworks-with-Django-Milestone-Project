@@ -5,7 +5,7 @@ Django settings for Milestone4 project.
 
 # import relevant files and databases.
 import os
-import env
+# import env
 import dj_database_url
 
 
