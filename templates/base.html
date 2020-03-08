@@ -75,15 +75,15 @@
                     </div>
                     <div class="col-sm-12 col-md-8 col-lg-9">
                         <div class="container">
-                            {% block content %}
-        
-                            {% endblock %}
-                            <hr>
                             {% if messages %}
                                 {% for message in messages %}
                                     {{ message }}
                                 {% endfor %}
                             {% endif %}
+                            {% block content %}
+        
+                            {% endblock %}
+                            <hr>
                         </div>
                     </div> 
                 </div>

@@ -10,7 +10,7 @@
             <fieldset class="form-group">
                 <legend>Create a new account</legend>
                 {% csrf_token %}
-                {{ registration_form.as_p | as_bootstrap }}
+                {{ registration_form.as_p}}
                 <button type="submit" class="btn btn-primary">Create account</button>
             </fieldset>
         </form>
