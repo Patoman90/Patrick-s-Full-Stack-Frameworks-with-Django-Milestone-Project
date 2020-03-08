@@ -3,32 +3,32 @@ Django settings for Milestone4 project.
 
 """
 
-# import relevant files and databases.
+''' import relevant files and databases. '''
 import os
-# import env
+''' import env '''
 import dj_database_url
 
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+''' Build paths inside the project like this: os.path.join(BASE_DIR, ...)'''
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# SECURITY Key
+''' SECURITY Key '''
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
-# Debug to be turned of for production.
+''' Debug to be turned of for production. '''
 
-DEBUG = True
+DEBUG = False
 
 
-# Allowed hosts
+''' Allowed hosts '''
 
 ALLOWED_HOSTS = ['localhost', 'patricks4thmilestoneproject.herokuapp.com']
 
 
-# Application definition
+''' Application definition '''
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 ]
 
 
-# Middleware needed beyond the OS.
+''' Middleware needed beyond the OS. '''
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,12 +62,12 @@ MIDDLEWARE = [
 ]
 
 
-# Root url
+''' Root url '''
 
 ROOT_URLCONF = 'Milestone4.urls'
 
 
-# Django templates
+''' Django templates '''
 
 TEMPLATES = [
     {
@@ -91,7 +91,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Milestone4.wsgi.application'
 
 
-# Database
+''' Database '''
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
@@ -105,8 +105,8 @@ else:
                 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
+''' Password validation '''
+''' https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators'''
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -123,12 +123,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = [	
+AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.CaseInsensitiveAuth'
 ]
 
-# Internationalization
+''' Internationalization '''
 
 LANGUAGE_CODE = 'en-us'
 
@@ -141,7 +141,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-# AWS settings
+''' AWS settings '''
 
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Mon, 10 Jun 2080 19:00:00 GMT',
@@ -157,7 +157,7 @@ AWS_S3_HOST = 's3-eu-west-1.amazonaws.com'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 
-# Static and Media files (CSS, JavaScript, Images)
+''' Static and Media files (CSS, JavaScript, Images) '''
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_LOCATION = 'static'
@@ -177,11 +177,11 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-# Email settings
+''' Email settings '''
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = "testingdev1990@gmail.com"
-EMAIL_HOST_PASSWORD = 'YQ6M$eqB#Z"~g8u#'
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')

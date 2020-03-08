@@ -2,7 +2,8 @@
 # Patrick Trollip's Full Stack Frameworks with Django Milestone Project.
 
 
-## Link to Website:
+## Link to Website: 
+https://patricks4thmilestoneproject.herokuapp.com/
 
 # What is the project?
     Cyber Sappers is a cyber security business with it's products and services based on a website that gives users
@@ -76,15 +77,28 @@ https://www.wireframes.org/tiger/data/codinghamster90/home_page_5e44596f3a303.ht
 
     Testing was done using Chrome Developer tools, Travis, debug mode set to true and functionality tested and passed before releasing
     the final product which is the website. The tests involved checking for typos, syntax errors, bugs, layout on multiple platforms and 
-    checking that whne code was added that other functionality on each page and app still worked as appropriate.
+    checking that when code was added that other functionality on each page and app still worked as appropriate and to my best ability at the time.
+
+### Known Issues to be fixed
+    Unfortunatly I was unable at the time to get the reviews form to send the data to a databse where the data would be rendered on 
+    a html page for users to view the user reviews.  I will fix this after assessment.
+
+    I was also unable given my resources at hand, not able to get the quote form to send to the desired email. I will fix this after assessment.
+
+    Also I needed the email to work to get the reset password function to work but I will have to come back and fix it.
+
+    I had made a type error when making my gitignore file. So I changed it to be correct and then changed all keys and assigned them to new variables
+    on Heroku and gitpod with the key pair to reference the appropriate variables to rescure everything. Not ideal but I will remember next time.
 
 ### Deployment:
     I deployed my code on gitpod to my github repository.
     From my github repository it was connected to the Heroku server, Travis tool for testing each version.
-    The website was wired up to AWS S£ cloud database and was wired up with Stripe for secure payments.
+    The website was wired up to AWS S3 cloud database and was wired up with Stripe for secure payments.
     When deploying I made sure not to push any secret keys or data that could be exploited by cyber criminals.
     I made sure the debug was switched off to prevent unwanted leaks of sensitive code.
     All code was working and then submitted for assessment via appropriate links and stored on github.
+    I also changed the debug to false before deployment.
+    The tests were passing on travis.
 
 ### Index and referenced code
     I modelled my django code from my courses mini-project as a reference and then tried to modify it so that it suited my website and was my 
