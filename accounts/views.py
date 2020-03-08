@@ -8,7 +8,6 @@ from django.http import HttpResponse
 from django.conf import settings
 
 
-
 def index(request):
     """A view that displays the index page"""
     return render(request, "index.html")
@@ -35,7 +34,7 @@ def login(request):
 
         if user:
             auth.login(user=user, request=request) 
-            return redirect(reverse('home'))
+            
         else:
             login_form.add_error(None, "Your username and/or password are incorrect")
     else:
