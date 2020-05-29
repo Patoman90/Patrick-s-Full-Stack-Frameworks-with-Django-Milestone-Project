@@ -227,9 +227,13 @@ that display when something is missing on the form, when the form is sent and wh
 that will not force the user to resubmit certain data they already added to a form.
 
 ## Testing:
-- Testing was done using Chrome Developer tools to try fig, Travis, debug mode set to true and functionality tested and passed before releasing
+- Testing was done using Chrome Developer tools to try figure out how to make layout changes to help find out what code would be needed to get the layout or changes I was looking for. I would then use the modified code on there and apply it to my IDE environment.
+
+- Travis was used to aid in the debugging of the website. I set debug to true and functionality tested and passed before releasing
 the final product which is the website. The tests involved checking for typos, syntax errors, bugs, layout on multiple platforms and 
 checking that when code was added that other functionality on each page and app still worked as appropriate and to my best ability at the time.
+
+- I also tested out different images, layouts and colours to the best of my knowledge and experience at the time till I got that cyber space look I was happy with.
 
 ## Known Issues to be fixed:
 - Unfortunatly I was unable at the time to get the reviews form to send the data to a databse where the data would be rendered on 
