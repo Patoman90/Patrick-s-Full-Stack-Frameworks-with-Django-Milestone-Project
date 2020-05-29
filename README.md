@@ -227,7 +227,7 @@ that display when something is missing on the form, when the form is sent and wh
 that will not force the user to resubmit certain data they already added to a form.
 
 ## Testing:
-- Testing was done using Chrome Developer tools, Travis, debug mode set to true and functionality tested and passed before releasing
+- Testing was done using Chrome Developer tools to try fig, Travis, debug mode set to true and functionality tested and passed before releasing
 the final product which is the website. The tests involved checking for typos, syntax errors, bugs, layout on multiple platforms and 
 checking that when code was added that other functionality on each page and app still worked as appropriate and to my best ability at the time.
 
