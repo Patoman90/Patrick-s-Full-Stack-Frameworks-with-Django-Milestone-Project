@@ -213,7 +213,7 @@ Wireframes were made using [MockupTiger](https://www.wireframes.org/).
 
 #### Profile Page:
 
-- **Profile Box** - When a user is logged in, they can view their profile on the profile, this will tell them their Username, Name which consists of their first name & last name, their email address & the date & time the account was created.
+- **User Profile** - When a user is logged in, they can view their profile on the profile page, this will tell them their Username, Name which consists of their first name & last name, their email address & the date & time the account was created. It was not finished though the way I planned to make it in time.
 
 ## Project planning:
 
@@ -264,16 +264,15 @@ The tests were passing on travis.
 
 ### Tools
 - [Wireframes](Wire frames tool = https://www.wireframes.org/tiger/getin.php) Tool used to build project prototype.
-- [Gitpod](https://gitpod.io) This was the choice of IDE for this project. 
-- [Django](https://www.djangoproject.com/) was used as part of the credentials for this project as it's a python web framework is used for accelerated custom web application development.
-- [Travis](https://travis-ci.org/) for a continuous integration service for testing the project in Github.
+- [Gitpod](https://gitpod.io) IDE used. 
+- [Django](https://www.djangoproject.com/) The python framework used as required by the project requirements.
+- [Travis](https://travis-ci.org/) Used for testing code was working the way it is meant to after changes.
 - [Stripe](https://stripe.com) was the planned tool for use of secure payments.
-- [AWS S3 Bucket](https://aws.amazon.com/) to store all images that are on the website.
+- [AWS S3 Bucket](https://aws.amazon.com/) to store all database info fr products and services. Could not get the images to show up.
 - [PIP](https://pip.pypa.io/en/stable/installing/) used to install requirements into the project.
-- [Gunicorn](https://pypi.org/project/gunicorn/) is a Python Web Server Gateway Interface HTTP server which is used to help the deployment of a Django project in Heroku.
+- [Gunicorn](https://pypi.org/project/gunicorn/)Used for the deployment of a Django project in Heroku.
 - [Psycopg2](https://pypi.org/project/psycopg2/) is a PostgreSQL database adapter for the Python programming language.
 - [Django Heroku](https://pypi.org/project/django-heroku/) is used to view the deployed project.
-- [Django Storages](https://django-storages.readthedocs.io/en/latest/) works with boto3 and AWS S3 to build a collection of custom storage backends with Django.
 - [GitHub](https://github.com/) is used as a remote backup of code used in the project & used to showcase code remotely.
 
 
