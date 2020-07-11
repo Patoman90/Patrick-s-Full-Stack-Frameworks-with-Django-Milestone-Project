@@ -3,6 +3,7 @@
    "python.linting.enabled": true,
    "python.linting.pep8Enabled": false,
    "python.linting.flake8Enabled": true,
+<<<<<<< HEAD
    "python.terminal.activateEnvironment": false,
    "python.formatting.autopep8Path": "/home/gitpod/.pyenv/shims/autopep8",
    "python.linting.flake8Path": "/home/gitpod/.pyenv/shims/flake8",
@@ -18,3 +19,8 @@
    },
    "emmet.extensionsPath": ".theia"
 }
+=======
+    "python.terminal.activateEnvironment": false,
+    "python.pythonPath": "/home/gitpod/.pyenv/shims/python3"
+}
+>>>>>>> 45a496d2876403d69098ab30fbd437cacba21eb8
