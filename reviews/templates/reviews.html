@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row col-12"> 
+            <h2> User reviews </h2>
+        </div>
+        <div class="row">
+            <ul>
+                <li>{{accounts.user.reviews.review}}</li>
+            </ul>
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+        <section>
+            <div class="col" id="quoteForm">
+                <div><h2> Write your review with this form </h2></div>
+                <hr>
+                <div class="container">
+                    <div class="col">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="validationServer01">First name</label>
+                                    <input type="text" class="form-control-was-validated" id="validationServer01" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        First name required please.
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="validationServer02">Last name</label>
+                                    <input type="text" class="form-control-was-validated" id="validationServer02" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Last name required please.
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group col-md-4 mb-3">
+                                    <label for="validationServer03">Choose item.</label>
+                                    <select class="custom-select form-control-was-validated" id="validationServer03" required>
+                                        <option value="1"> Product </option>
+                                        <option value="2"> Service </option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Choose a item for review please.
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="validationServer04"> Name of Item </label>
+                                    <input type="text" class="form-control-was-validated" id="validationServer04" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Service or Product name required please.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="validationTextarea">Write Review</label>
+                                    <textarea class="form-control-was-validated" id="userReview" placeholder="Your review here please." rows="3" required></textarea>
+                                    <div class="valid-feedback">
+                                        Thank you for the review!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please provide your feedback of the item you are reviewing.
+                                    </div>
+                                </div>
+                            </div>
+                            {% csrf_token %}
+                            <button class="btn btn-primary" type="submit">Submit review</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% else %}
+        <div>
+            <h3>Please login to review your item.</h3>
+        </div>
+    {% endif %}
+{% endblock %}

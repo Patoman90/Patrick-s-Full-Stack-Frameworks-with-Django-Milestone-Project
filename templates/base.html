@@ -1,0 +1,122 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Milestone project 4</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.css" integrity="sha256-BbKecxrFo+Ecew/N4HhSlsVkNCvNiDHJySBsqWciTYg=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://patricks-milestone4.s3-eu-west-1.amazonaws.com/custom+(1).css">
+        {% block head_js %}
+        {% endblock head_js %}
+    </head>
+    <body id="body-color">
+        <header class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <img class="col" id="my-image" src="https://patricks-milestone4.s3-eu-west-1.amazonaws.com/CyberSappers1.jfif" alt="Picture of a man in a suit holding a silver cyber shield in his hand"> 
+                </div>
+                <div class="col-sm-12 col-md-8 col-lg-9" id="my-company">
+                    <h1 class="my-company"> Cyber Sappers Ltd. </h1>
+                </div>
+            </div>
+        </header>
+        <br>
+        <hr>
+        <br>
+        <section>       
+            <div class="container-fluid ">
+                <div class="row no-gutters">
+                    <div class="col-sm-12 col-md-4 col-lg-3">
+                        <div class="dropdown dropright">
+                            <button type="button" class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+                                <i class="fas fa-bars"> Menu</i>
+                                <span class="caret"></span>
+                            </button>
+                            <div class="dropdown-menu">
+                                {% if user.is_authenticated %}
+                                    <a class="dropdown-item" href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a>
+                                    <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"> Logout</i></a>
+                                    <a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-user-circle"> Profile</i></a>
+                                    <a class="dropdown-item" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"> Cart</i></a>
+                                    <a class="dropdown-item" href="{% url 'products' %}"><i class="fas fa-hdd"> Products</i></a>
+                                    <a class="dropdown-item" href="{% url 'services' %}"><i class="fas fa-handshake"> Services</i></a>
+                                    <a class="dropdown-item" href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a>
+                                {% else %}
+                                    <a class="dropdown-item" href="{% url 'home' %}"><i class="fas fa-home"> Home</i></a>
+                                    <a class="dropdown-item" href="{% url 'register' %}"><i class="far fa-registered"> Register</i></a>
+                                    <a class="dropdown-item" href="{% url 'login' %}"><i class="fas fa-key"> Login</i></a>
+                                    <a class="dropdown-item" href="{% url 'products' %}"><i class="far fa-hdd"> Products</i></a>
+                                    <a class="dropdown-item" href="{% url 'services' %}"><i class="far fa-handshake"> Services</i></a>
+                                    <a class="dropdown-item" href="{% url 'reviews' %}"><i class="fas fa-pen-square"> Reviews</i></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <a href="{% url 'quote' %}">
+                                <button class="btn btn-primary " role="button" id="quote" >
+                                    <i class="far fa-check-circle"> Get a Quote!</i>
+                                </button>
+                            </a>
+                        </div>
+                        <br>
+                        <div>
+                            <a href="{% url 'reviews' %}">
+                                <button class="btn btn-primary" role="button" id="Review">
+                                    <i class="fas fa-plus"> Add review </i>
+                                </button>
+                            </a>
+                        </div>
+                        <hr>
+                        <br>
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-lg-9">
+                        <div class="container">
+                            {% if messages %}
+                                {% for message in messages %}
+                                    {{ message }}
+                                {% endfor %}
+                            {% endif %}
+                            {% block content %}
+        
+                            {% endblock %}
+                            <hr>
+                        </div>
+                    </div> 
+                </div>
+                <div class="row no-gutters" id="navigationBar">
+                    <div class="col-12">
+                        <nav class="navbar">
+                            <form class="form-inline">
+                                {% if user.is_authenticated %}
+                                    <a href="{% url 'home' %}"><button class="btn btn-outline-primary" type="button"><i class="fas fa-home"> Home</i></button></a>
+                                    <a href="{% url 'logout' %}"><button class="btn btn-outline-info" type="button"><i class="fas fa-sign-out-alt"> Logout</i></button></a>
+                                    <a href="{% url 'profile' %}"><button class="btn btn-outline-primary" type="button"><i class="fas fa-user-circle"> Profile</i></button></a>
+                                    <a href="{% url 'reviews' %}"><button class="btn btn-outline-info" type="button"><i class="fas fa-pen-square"> Reviews</i></button></a>
+                                    <a href="{% url 'view_cart' %}"><button class="btn btn-outline-primary" type="button"><i class="fas fa-shopping-cart"> Cart</i></button></a>
+                                {% else %}
+                                    <a href="{% url 'home' %}"><button class="btn btn-outline-primary" type="button"><i class="fas fa-home"> Home</i></button></a>
+                                    <a href="{% url 'login' %}"><button class="btn btn-outline-info" type="button"><i class="fas fa-key"> Login</i></button></a>
+                                    <a href="{% url 'products' %}"><button class="btn btn-outline-primary" type="button"><i class="fas fa-hdd"> Products</i></button></a>
+                                    <a href="{% url 'services' %}"><button class="btn btn-outline-info" type="button"><i class="far fa-handshake"> Services</i></button></a>
+                                    <a href="{% url 'reviews' %}"><button class="btn btn-outline-primary" type="button"><i class="fas fa-pen-square"> Reviews</i></button></a>
+                                {% endif %}
+                            </form>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="row no-gutters col-12"  id="footer">   
+            <footer><h3> Project by Patrick Trollip </h3></footer>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <--! Stripe payment script -->
+        <script src="https://js.stripe.com/v3/"></script>
+    </body>
+</html>

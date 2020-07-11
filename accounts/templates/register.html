@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+{% block content %}
+    <div> <h2> User Registration </h2></div>
+    <div>
+        <p>If you already have an account, you can <a href="{% url 'login' %}">sign in </a></p>
+    </div>
+    <div>
+        <form method="POST">
+            <fieldset class="form-group">
+                <legend>Create a new account</legend>
+                {% csrf_token %}
+                {{ registration_form.as_p}}
+                <button type="submit" class="btn btn-primary">Create account</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

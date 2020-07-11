@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    <section>
+      <div class="col" id="quoteForm">
+            <div><h2> Get your quote with this form </h2></div>
+            <hr>
+            <div class="container">
+                <div class="col">
+                    <form role="form" method="POST" action="{% url 'quote' %}">
+                        {% csrf_token %}    
+                        <div class="form-group">
+                            <label for="formInputName"> Your name: </label>
+                            <input type="text" class="form-control" id="formInputName" placeholder="Your full-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="formInputQuote"> Your Quote or Question: </label>
+                            <input type="text" class="form-control" id="formInputQuote" placeholder="Your comments">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-outline-info" method="POST"><i class="fas fa-arrow-right">
+                                Send</i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12">
+                    <h3> Call us instead.</h3>
+                    <p> Phone: 1800-1234567</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
