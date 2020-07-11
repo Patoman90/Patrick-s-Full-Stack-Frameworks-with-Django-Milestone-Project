@@ -30,13 +30,14 @@ def login(request):
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
                                      password=request.POST['user_password'])
-        messages.error(request, "You have successfully logged in")
 
         if user:
             auth.login(user=user, request=request) 
-            
+            messages.success(request, "You have successfully logged in.")
+            return redirect(reverse("profile"))
         else:
-            login_form.add_error(None, "Your username and/or password are incorrect")
+            messages.error(request, "Login unsuccessful. Check your credentials and try again.")
+            
     else:
         login_form = UserLoginForm()
 

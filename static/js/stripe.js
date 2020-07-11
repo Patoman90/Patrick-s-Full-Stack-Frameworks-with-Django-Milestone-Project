@@ -20,7 +20,7 @@ $function() {
                 $("#id_expiry_year").removeAttr('name');
 
                 form.submit();
-                //Stripe api keys and values must be from stripe just anything.
+                //Stripe api keys and values must be from stripe not just anything.
             } else {
                 $("#stripe-error-message").text(response.error.message);
                 $("#credit-card-errors").show();
