@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from accounts.forms import UserLoginForm, MakeUserAccount, UserQuoteForm
+from accounts.forms import (UserLoginForm, MakeUserAccount, UserQuoteForm)
 from django.core.mail import EmailMessage, send_mail
 from django.http import HttpResponse
 from django.conf import settings
