@@ -27,10 +27,12 @@ def checkout(request):
             total = 0
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id)
-                total += quantity * product.price
+                service = get_object_or_404(Service, pk=id)
+                total += quantity * product.price + service.price
                 order_line_item = OrderLineItem(
                     order=order,
                     product=product,
+                    service=service,
                     quantity=quantity
                 )
                 order_line_item.save()
@@ -48,7 +50,7 @@ def checkout(request):
                 messages.error(request, "Sorry your card was declined.")
 
             if customer.paid:
-                messages.error(request, "Your payment was successful.")
+                messages.success(request, "Your payment was successful.")
                 request.session['cart'] = {}
                 return redirect(reverse('products'))
             else:
