@@ -1,6 +1,5 @@
 from django.shortcuts import get_object_or_404
 from products.models import Product
-from services.models import Service
 
 
 def cart_contents(request):
