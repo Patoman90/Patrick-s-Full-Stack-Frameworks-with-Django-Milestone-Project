@@ -14,7 +14,7 @@ def show_all_products(request):
 
 def show_all_services(request):
     products = Product.objects.filter(is_service=True)
-    return render(request, "services.html", {"services": services})
+    return render(request, "services.html", {"services": products})
 
 
 def get_reviews(request):
