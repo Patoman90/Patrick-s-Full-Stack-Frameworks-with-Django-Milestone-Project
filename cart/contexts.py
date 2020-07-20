@@ -18,7 +18,7 @@ def cart_contents(request):
         cart_items.append({'id': id, 'quantity': quantity, 'product': product})
 
     for id, quantity in cart.items():
-        service = get_object_or_404(Service, pk=id)
+        service = get_object_or_404(Product, pk=id)
         total_items += quantity * service.price
         service_count += quantity
         cart_items.append({'id': id, 'quantity': quantity, 'service': service})
