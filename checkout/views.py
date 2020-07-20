@@ -27,12 +27,10 @@ def checkout(request):
             total = 0
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id)
-                service = get_object_or_404(Service, pk=id)
-                total += quantity * product.price + service.price
+                total += quantity * product.price
                 order_line_item = OrderLineItem(
                     order=order,
                     product=product,
-                    service=service,
                     quantity=quantity
                 )
                 order_line_item.save()
