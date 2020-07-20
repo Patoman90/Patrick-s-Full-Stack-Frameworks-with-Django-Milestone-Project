@@ -97,6 +97,7 @@ WSGI_APPLICATION = 'Milestone4.wsgi.application'
 ''' Database '''
 
 if "DATABASE_URL" in os.environ:
+    print('Production Database')
     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 else:
     print("Failed to use DATABASE_URL. Using SQlite instead.")
