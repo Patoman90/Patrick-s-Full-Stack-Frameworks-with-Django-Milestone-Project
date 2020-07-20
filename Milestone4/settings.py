@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ''' Debug to be turned of for production. '''
 
-DEBUG = True
+DEBUG = False
 
 
 ''' Allowed hosts '''

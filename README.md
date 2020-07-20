@@ -241,9 +241,7 @@ a html page for users to view the user reviews.  I will fix this after assessmen
 
 - I was also unable given my resources at hand, not able to get the quote form to send to the desired email. I will fix this after          assessment.
 
-- Also I needed the email to work to get the reset password function to work but I will have to come back and fix it.
-
-- I had made a type error when making my gitignore file. So I changed it to be correct and then changed all keys and assigned them to new variables on Heroku and gitpod with the key pair to reference the appropriate variables to rescure everything. Not ideal but I will remember next time.
+- Also I needed the email to work to get the reset password function to work.
 
 ## Deployment:
 - I deployed my code on gitpod to my github repository.
@@ -252,6 +250,7 @@ The website was wired up to AWS S3 cloud database and was wired up with Stripe f
 When deploying I made sure not to push any secret keys or data that could be exploited by cyber criminals.
 - I made sure the debug was switched off to prevent unwanted leaks of sensitive code.
 All code was working and then submitted for assessment via appropriate links and stored on github.
+- I made changes to the code and fixed error and known issues I struggled with like stripe payments which now work.
 - I also changed the debug to false before deployment.
 The tests were passing on travis.
 
