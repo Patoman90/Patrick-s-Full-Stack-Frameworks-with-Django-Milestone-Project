@@ -20,4 +20,4 @@ s3transfer==0.3.3
 sqlparse==0.3.0
 stripe==2.42.0
 travis==0.0.3
-urllib3==1.25.8
+urllib3==1.26.5
